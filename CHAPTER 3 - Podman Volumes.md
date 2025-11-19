@@ -1,9 +1,6 @@
 # CHAPTER 3 - Podman Volumes
 
-<aside>
-<img src="https://www.notion.so/icons/report_lightgray.svg" alt="https://www.notion.so/icons/report_lightgray.svg" width="40px" /> Bind mounts allows the same content to be accessible in two places, without any additional overhead. Is important to understand that bind doesn’t copy the data or create new data.
-
-</aside>
+> Bind mounts allows the same content to be accessible in two places, without any additional overhead. Is important to understand that bind doesn’t copy the data or create new data.
 
 - Volumes are useful for separating the data used by a container from the application inside an image.
 - Volumes mount parts of the fs into a container’s env, which means security concerns like SELinux and user namespace need to be modified to allow access.

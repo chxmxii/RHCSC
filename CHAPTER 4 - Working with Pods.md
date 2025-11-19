@@ -1,10 +1,8 @@
 # CHAPTER 4 - Working with Pods
 
-<aside>
-<img src="https://www.notion.so/icons/report_lightgray.svg" alt="https://www.notion.so/icons/report_lightgray.svg" width="40px" /> **Pods** are a way of grouping together into more comples applicaitons, sharing namespaces, and sharing resource constraints.
+> **Pods** are a way of grouping together into more comples applicaitons, sharing namespaces, and sharing resource constraints.
 **Pods** share most of the options container use, and when you add a container to a pod, it shares these options with all containers in the pod.
 
-</aside>
 
 - Why pods?
     - A big advantage of using pods is that you can manage them as discrete units. Starting a
@@ -20,14 +18,14 @@
 
 - `podman pod create -p 8080:8080 --name mypod -v .html:/var/www/html:z`
     
-    ![Untitled](Untitled%2011.png)
+    ![podcreation](assets/pc.png)
     
 
 ### Adding a container to a Pod
 
 - `podman create --pod mypod --name myapp quary.io/chxmxii/myimage`
     
-    ![Untitled](Untitled%2012.png)
+    ![podcreation](assets/pc2.png)
     
 - At this point, Podman examines the infra container, mounts the /var/www/html volume, and joins the namespaces when it launches the sidecar container.
 
@@ -61,4 +59,4 @@
 
 ### Summary
 
-![Untitled](Untitled%2013.png)
+![pods](assets/psum.png)

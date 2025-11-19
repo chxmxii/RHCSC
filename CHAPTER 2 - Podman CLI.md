@@ -93,9 +93,9 @@
     - Using the podman commit command to create an image is not a common method, the entire process of building container images can be scripted and automated using podman build.
 - More Commands
     
-    ![Untitled](Untitled%205.png)
+    ![cli](assets/cli.png)
     
-    ![Untitled](Untitled%206.png)
+    ![clis](assets/clis.png)
     
 
 ### Summary
@@ -152,9 +152,9 @@
         ```
         
     
-    ![Untitled](Untitled%207.png)
+    ![transports](assets/transports.png)
     
-    ![Untitled](Untitled%208.png)
+    ![transports](assets/transports2.png)
     
 - Tagging Images
     - `podman tag myimage quay.io/chxmxii/myimage`
@@ -282,6 +282,6 @@
 
 ### Summary
 
-![Untitled](Untitled%209.png)
+![cli-summary](assets/cli-summary.png)
 
-![Untitled](Untitled%2010.png)
+![cli-summary](assets/cli-summary2.png)

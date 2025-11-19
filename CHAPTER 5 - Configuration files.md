@@ -1,9 +1,6 @@
 # CHAPTER 5 - Configuration files
 
-<aside>
-<img src="https://www.notion.so/icons/report_lightgray.svg" alt="https://www.notion.so/icons/report_lightgray.svg" width="40px" /> Podman allows its users to have ultimate control over the defaults configurations, so the container engine configuration files provide a mechanism for customizing the way podman run.
-
-</aside>
+> Podman allows its users to have ultimate control over the defaults configurations, so the container engine configuration files provide a mechanism for customizing the way podman run.
 
 ### Configuration files for storage
 
@@ -33,15 +30,15 @@ ROOTLESS MODE:
 
 ### Configuration files for drivers
 
-![Untitled](Untitled%2014.png)
+![storage drivers](assets/csd.png)
 
-![Untitled](Untitled%2015.png)
+![storage drivers](assets/csd.png)
 
 ### Configuration files for registries
 
 - registries.conf configuration file is a system-wide configuration file for container image registries. Podman uses `$HOME/.config/containers/registries.conf` if exists, otherwise, it uses `/etc/containers/registries.conf`
 
-![Untitled](Untitled%2016.png)
+![registries](assets/regs.png)
 
 - **Block pulling from container registries:**
     - you can configure the registries.conf to block pulling from any registry you want.
@@ -54,12 +51,12 @@ ROOTLESS MODE:
         
     - [[registry]] is a table entry that can specify how to handle individual container registries.
         
-        ![Untitled](Untitled%2017.png)
+        ![reg table](assets/regcli.png)
         
 
 ### Configuration files for engines
 
-![Untitled](Untitled%2018.png)
+![conf file](assets/cconf.png)
 
 ```bash
 $ mkdir -p ~/.config/containers/containers.conf.d/ && cd $_ && cat << _E > env.conf 
@@ -88,7 +85,7 @@ runtime="crun"
 
 - /etc/subuid and /etc/subgid specifies the UID ranges for your containers. Podman reads these files and then launches /usr/bin/newuidmap and /usr/bin/newgidmap
     
-    ![Untitled](Untitled%2019.png)
+    ![uuids](assets/uuids.png)
     
 - use the command `podman system migrate` to stop the `podman pause` process and re-creates the new user-namespace and take then effects.
 

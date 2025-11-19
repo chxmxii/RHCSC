@@ -2,11 +2,11 @@
 
 ### Integration with systemd
 
-![Untitled](Untitled%2020.png)
+![systemd](assets/systemd.png)
 
 - You can run systemd within a container, this will allow you to run many services within a container.
     
-    ![Untitled](Untitled%2021.png)
+    ![systemd-wcontainer](assets/sdwc.png)
     
 - You can use **ubi8-init** image or any other image that runs the CMD `[/sbin/init, /usr/sbin/init,/usr/local/sbin/init,/*/systemd..]` as these commands will trigger podman to run in systemd mode.
 - We can use the following containerfile to run httpd as a service within podman
@@ -37,7 +37,7 @@
         log_driver="journald"
         ```
         
-        ![Untitled](Untitled%2022.png)
+        ![journald](assets/journald.png)
         
 - **Events**
     - check the event records of the last container you ran:
@@ -46,20 +46,17 @@
         - `podman info --format '{{ .Host.EventLogger }}’`
     - to override the default event logger, create a file under `~/.config/containers/containers.conf.d/events_logger.conf`
         
-        ![Untitled](Untitled%2023.png)
+        ![eventLogger](assets/elogger.png)
         
 
 ### Starting containers at boot
 
-<aside>
-<img src="https://www.notion.so/icons/exclamation-mark_green.svg" alt="https://www.notion.so/icons/exclamation-mark_green.svg" width="40px" /> Since podman does not run as a daemon, meaning you can’t rely on a daemon to automatically start your containers at boot time. Instead you will need to run containerized services via systemd.
-
-</aside>
+> Since podman does not run as a daemon, meaning you can’t rely on a daemon to automatically start your containers at boot time. Instead you will need to run containerized services via systemd.
 
 - **Restart containers**
     - The `podman run` command allows you to choose whether to restart a container if its not stoppe0d by a user, you can achieve this by using the option `--restart`.
         
-        ![Untitled](Untitled%2024.png)
+        ![restart options](assets/ropts.png)
         
         - When your system boots up, systemd runs the following podman command to start all the containers with the restart policy set to `always`.
             - `/usr/bin/podman start --all --filter restart-policy=always`.

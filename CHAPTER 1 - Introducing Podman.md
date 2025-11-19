@@ -104,10 +104,10 @@
     - NOTE: Docker now has the ability to run rootless similarly to Podman.
         - Docker and podman architecture
             
-            ![Untitled](Untitled.png)
+            ![docker arch](assets/dockerarch.png)
             
     
-    ![Untitled](Untitled%201.png)
+    ![podman arch](assets/parch.png)
     
 - **REST API**
     - Podman can be run as a socket-activated REST API service which will allows remote clients to manage and launch Podman containers.
@@ -117,7 +117,7 @@
     - Podman works with either a single container at a time, like docker, or it can manage groups of containers togethere in a pod.
     - A pod is a group of one ore more containers, with shared sotrage/network resources.
     
-    ![Figure P.1 : Two pods running on a host. Each pod runs two different containers along with the infra container.](Untitled%202.png)
+    ![Figure P.1 : Two pods running on a host. Each pod runs two different containers along with the infra container.](assets/layers.png)
     
     Figure P.1 : Two pods running on a host. Each pod runs two different containers along with the infra container.
     
@@ -129,7 +129,7 @@
 - **Customized Registries**
     - Podman supports the concept of pulling images using short names, such as **ubi8** without specifying the registry they reside `registry.access.redhat.com/library/ubi8:latest`
         
-        ![Untitled](Untitled%203.png)
+        ![registry](assets/reg.png)
         
     - While in docker, if you attempt to pull ubi8/httpd-24 it will fail because the container is not on [docker.io](http://docker.io), and thats because Docker is hardcoded to always pull from [https://docker.io](https://docker.io) when using a short name.
     - Unlike docker, Podman allow you to specify multiple registries, like what you do with package managers. If you attempt to pull ubi8/httpd-24, podman will present you a list of registries to choose from.
@@ -138,7 +138,7 @@
     - Podman supports many different container image sources and targets called transports.
     - Podmcan can pull images from container registries and from local containers storage.
         
-        ![Untitled](Untitled%204.png)
+        ![pull](assets/pull.png)
         
 - **Customizability**
     - Unlike other container engines, Podman has a very customizable configuration.
